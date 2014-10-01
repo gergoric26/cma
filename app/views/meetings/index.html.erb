@@ -1,0 +1,39 @@
+<h1>Listing meetings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Purpose</th>
+      <th>Attendance</th>
+      <th>Timeanddate</th>
+      <th>Location</th>
+      <th>Notes</th>
+      <th>Uploaddocuments</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @meetings.each do |meeting| %>
+      <tr>
+        <td><%= meeting.purpose %></td>
+        <td><%= meeting.attendance %></td>
+        <td><%= meeting.timeAndDate %></td>
+        <td><%= meeting.location %></td>
+        <td><%= meeting.notes %></td>
+        <td><%= meeting.uploadDocuments %></td>
+        <td><%= link_to 'Download Document', download_contact_meeting_path(@contact, meeting) %></td>
+        <td><%= link_to 'Show', contact_meeting_path(@contact, meeting) %></td>
+        <td><%= link_to 'Edit', edit_contact_meeting_path(@contact, meeting) %></td>
+        <td><%= link_to 'Destroy', contact_meeting_path(@contact, meeting), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Meeting', new_contact_meeting_path(@contact) %> |
+<%= link_to 'contacts', contacts_path %>

@@ -1,0 +1,48 @@
+<h1>Listing contacts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Streetaddress</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Phonenumber</th>
+      <th>Alternatephonenumber</th>
+      <th>Comments</th>
+      <th>Birthday</th>
+      <th>Uploaddocuments</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contacts.each do |contact| %>
+      <tr>
+        <td><%= contact.firstName %></td>
+        <td><%= contact.lastName %></td>
+        <td><%= contact.streetAddress %></td>
+        <td><%= contact.city %></td>
+        <td><%= contact.state %></td>
+        <td><%= contact.zip %></td>
+        <td><%= contact.phoneNumber %></td>
+        <td><%= contact.alternatePhoneNumber %></td>
+        <td><%= contact.comments %></td>
+        <td><%= contact.birthday %></td>
+        <td><%= contact.uploadDocuments %></td>
+        <td><%= link_to 'Download Document', download_contact_path(contact) %></td>
+        <td><%= link_to 'Show', contact %></td>
+        <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
+        <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contact', new_contact_path %>

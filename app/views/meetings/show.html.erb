@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Purpose:</strong>
+  <%= @meeting.purpose %>
+</p>
+
+<p>
+  <strong>Attendance:</strong>
+  <%= @meeting.attendance %>
+</p>
+
+<p>
+  <strong>Timeanddate:</strong>
+  <%= @meeting.timeAndDate %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @meeting.location %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @meeting.notes %>
+</p>
+
+<p>
+  <strong>Uploaddocuments:</strong>
+  <%= @meeting.uploadDocuments %>
+</p>
+
+<%= link_to 'Edit', edit_contact_meeting_path(@contact, @meeting) %> |
+<%= link_to 'Back', contact_meetings_path(@contact, @meeting) %>

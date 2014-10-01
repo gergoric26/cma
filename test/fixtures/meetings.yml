@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  purpose: MyString
+  attendance: MyString
+  timeAndDate: MyString
+  location: MyString
+  notes: MyText
+  uploadDocuments: MyString
+
+two:
+  purpose: MyString
+  attendance: MyString
+  timeAndDate: MyString
+  location: MyString
+  notes: MyText
+  uploadDocuments: MyString

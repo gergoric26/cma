@@ -1,0 +1,21 @@
+<div><p><%= current_user.email %></p></div>
+<br>
+<h1>Listing contacts</h1>
+
+  <tbody>
+    <% if @contacts %>
+    <% @contacts.each do |contact| %>
+      <tr>
+        <td><%= contact.firstName %></td>
+        <td><%= contact.lastName %></td>
+        <td><%= contact.streetAddress %></td>
+      </tr>
+      <% end %>
+    <% end %>
+
+  </tbody>
+
+<br>
+
+<%= link_to 'New Contact', new_contact_path %>
+
